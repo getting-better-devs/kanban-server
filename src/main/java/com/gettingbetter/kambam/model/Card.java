@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
@@ -23,5 +24,6 @@ public class Card {
     private String titulo;
     private String subTitulo;
     private String subtasks; //lista
+
 
 }

@@ -23,6 +23,9 @@ public class CardService {
     public Card save(Card card) {
         return cardRepository.save(card);
     }
+    public boolean existsByTituloNotNull(String titulo) {
+        return cardRepository.existsByTituloNotNull(titulo);
+    }
 
 
     public List<Card> findAll() {
