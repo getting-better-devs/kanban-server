@@ -1,11 +1,9 @@
 package com.gettingbetter.kambam.service;
 
-import com.gettingbetter.kambam.model.Card;
+import com.gettingbetter.kambam.model.Task;
 import com.gettingbetter.kambam.repository.CardRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -20,12 +18,12 @@ public class CardService {
     }
 
     @Transactional
-    public Card save(Card card) {
+    public Task save(Task card) {
         return cardRepository.save(card);
     }
 
 
-    public List<Card> findAll() {
+    public List<Task> findAll() {
         return cardRepository.findAll();
     }
 

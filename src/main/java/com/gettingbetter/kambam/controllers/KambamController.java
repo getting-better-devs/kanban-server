@@ -1,11 +1,9 @@
 package com.gettingbetter.kambam.controllers;
 
 import com.gettingbetter.kambam.dtos.CardDto;
-import com.gettingbetter.kambam.model.Card;
-import com.gettingbetter.kambam.repository.CardRepository;
+import com.gettingbetter.kambam.model.Task;
 import com.gettingbetter.kambam.service.CardService;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,13 +24,13 @@ public class KambamController {
 
     @PostMapping()
     public ResponseEntity<Object> saveCard(@RequestBody @Valid CardDto cardDto) {
-        Card card = new Card();
+        Task card = new Task();
         BeanUtils.copyProperties(cardDto, card);
         return ResponseEntity.status(HttpStatus.CREATED).body(cardService.save(card));
     }
 
     @GetMapping
-    public ResponseEntity<List<Card>> listAllCards(){
+    public ResponseEntity<List<Task>> listAllCards(){
         return ResponseEntity.status(HttpStatus.OK).body(cardService.findAll());
     }
 
